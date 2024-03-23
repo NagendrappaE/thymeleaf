@@ -5,10 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<ol>
-<li>One</li>
-<li>two</li>
-<li>Three</li>
-</ol>
+
+	<li class="nav-item" th:each="menuItem : ${menuitemList}"
+		th:if="${menuItem.type == 'QUEUE'}"><a th:href="@{${menuItem.link}}"
+		th:text="${menuItem.menuName}"></a></li>
+
+
+
+
 </body>
 </html>
