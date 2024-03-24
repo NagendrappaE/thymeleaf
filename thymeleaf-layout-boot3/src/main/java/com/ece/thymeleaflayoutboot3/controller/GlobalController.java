@@ -6,6 +6,7 @@ package com.ece.thymeleaflayoutboot3.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,6 +20,9 @@ import com.ece.thymeleaflayoutboot3.bean.MenuItem;
  */
 @ControllerAdvice
 public class GlobalController {
+
+	@Value("${public.api.base.url}")
+	private String publicurl;
 
 	@ModelAttribute(name = "menuGroupList")
 	public List<MenuGroup> group(Model model) {
@@ -75,6 +79,12 @@ public class GlobalController {
 
 		return menuList;
 
+	}
+
+	@ModelAttribute(name = "publicapiurl")
+	public String publicurl() {
+
+		return publicurl;
 	}
 
 }

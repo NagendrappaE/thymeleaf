@@ -4,12 +4,19 @@
 	layout:decorate="layout-flux">
 <head>
 <meta charset="UTF-8">
+<script type="text/javascript" th:src="@{/js/viewmandate.js}"></script>
 <title>view Mandate</title>
 </head>
 <body>
 	<div layout:fragment="page-content-fragment">
-
-		<h1>view mandate</h1>
+	
+        <input type="hidden" name ="publicurl" id="publicurl" th:value="${publicapiurl}">	
+ 
+		<form id="nameDetailsForm" name="nameDetailsForm">
+			<label for="umrn">UMRN:</label><br> <input type="text" id="umrn"
+				name="umrn" /><br> <label for="payername">PayerName:</label><br>
+			<input type="text" id="payername" name="payername" />
+		</form>
 	</div>
 
 
